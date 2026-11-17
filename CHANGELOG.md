@@ -135,3 +135,9 @@
   - Craft Commerce
     - Add to cart
     - Purchase
+# Unreleased
+
+- Deliver conversion events through Craft's queue, preserving the original event
+  timestamp, ID, source URL, user data and destination. Failed deliveries remain
+  visible as failed queue jobs and can be retried with the same event payload.
+
