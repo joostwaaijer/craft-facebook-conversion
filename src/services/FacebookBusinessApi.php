@@ -27,7 +27,7 @@ class FacebookBusinessApi
         $this->api->setLogger($logger);
     }
 
-    public function sendEvent($eventName, UserData $userData = null, CustomData $customData = null, $eventId = null)
+    public function sendEvent($eventName, ?UserData $userData = null, ?CustomData $customData = null, $eventId = null)
     {
         $settings = Plugin::getInstance()->getSettings();
         $request = Craft::$app->getRequest();
