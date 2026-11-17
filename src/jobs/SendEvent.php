@@ -3,7 +3,7 @@
 namespace dwy\FacebookConversion\jobs;
 
 use craft\queue\BaseJob;
-use dwy\FacebookConversion\Plugin;
+use dwy\FacebookConversion\services\FacebookBusinessApi;
 use FacebookAds\Object\ServerSide\Event;
 
 class SendEvent extends BaseJob
@@ -17,7 +17,7 @@ class SendEvent extends BaseJob
 
     public function execute($queue): void
     {
-        Plugin::getInstance()->facebook->executeEvent($this->event, $this->pixelId, $this->testEventCode);
+        (new FacebookBusinessApi())->executeEvent($this->event, $this->pixelId, $this->testEventCode);
     }
 
     protected function defaultDescription(): ?string
